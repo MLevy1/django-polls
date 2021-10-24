@@ -4,7 +4,7 @@
 
 https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token
 
-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
+PA token is only laptop in documents folder "github inst"
 
 -you should already be linked to the remote origin, but if not:
 
