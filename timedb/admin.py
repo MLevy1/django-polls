@@ -4,5 +4,3 @@ from django.contrib import admin
 from .models import Activity, Event, SubProj
 
 admin.ste.register(Activty)
-admin.ste.register(Event)
-admin.ste.register(SubProj)
