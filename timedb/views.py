@@ -5,4 +5,4 @@ from django.http import HttpResponse
 
 
 def index(request):
-    return HttpResponse("Hello, world. You're at the time db index.")
+    return HttpResponse("<h1>A New and Improved Time Database!</h1>")
