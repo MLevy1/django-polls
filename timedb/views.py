@@ -2,10 +2,11 @@ from django.shortcuts import render, get_object_or_404
 
 from django.http import Http404
 
+from django urs import reverse
+
 from .models import Activity, SubProj, Event
 
-# Create your views here.
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 
 #main page
 def index(request):
@@ -20,6 +21,8 @@ def index(request):
 def tpage(request):
     output = 'test'
     return HttpResponse(output)
+
+#LISTS
 
 #event list
 def event_list(request):
@@ -39,6 +42,8 @@ def subproj_list(request):
     context = {'splist' : splist,}
     return render(request, 'timedb/sp_list.html', context)
 
+#DETAIL
+
 #activity detail
 def act_detail(request, act_id):
     activity = get_object_or_404(Activity, pk=act_id)
@@ -54,11 +59,14 @@ def event_detail(request, event_id):
     event = get_object_or_404(Event, pk=event_id)
     return render(request, 'timedb/event_detail.html', { 'event' : event })
 
+#ADD
+
 #add event
 
 
 #add activity
-#def act_add(request):
+def act_add(request):
+
 
 
 #add sub-project

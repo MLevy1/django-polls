@@ -1,0 +1,6 @@
+<h1>Add Activity</h1>
+<form action="{% url 'timedb:act_add' act.id %}" method="post">
+{% csrf_token %}
+    <input type="text" name="act_inp" id="act_inp" ></input>
+    <input type="submit" value="Add">
+</form>
