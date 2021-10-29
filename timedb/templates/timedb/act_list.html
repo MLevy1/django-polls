@@ -1,0 +1,12 @@
+<h1>Activities</h1>
+<a href="{% url 'timedb:index' %}/">Home</a>
+<hr>
+{% if actlist %}
+<ul>
+    {% for act in actlist %}
+    <li><a href="{% url 'timedb:act_detail' act.id %}/">{{act.activity_name}}</a></li>
+    {% endfor %}
+</ul>
+{% else %}
+    <p>No Events</p>
+{% endif %}

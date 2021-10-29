@@ -1,0 +1,12 @@
+<h1>Sub-Projects</h1>
+<a href="{% url 'timedb:index' %}/">Home</a>
+<hr>
+{% if splist %}
+<ul>
+    {% for sp in splist %}
+    <li><a href="{% url 'timedb:subproj_detail' sp.id %}/">{{sp.subproj_name}}</a></li>
+    {% endfor %}
+</ul>
+{% else %}
+    <p>No Sub-Projects</p>
+{% endif %}

@@ -1,0 +1,22 @@
+<h1>Events</h1>
+<a href="{% url 'timedb:index' %}/">Home</a>
+<hr>
+{% if elist %}
+<table>
+    {% for event in elist %}
+    <tr>
+        <td>
+            <a href="{% url 'timedb:event_detail' event.id %}/">{{event.event_time}}</a>
+        </td>
+        <td>
+            {{ event.activity }}
+        </td>
+        <td>
+            {{ event.subproj }}
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% else %}
+    <p>No Events</p>
+{% endif %}
