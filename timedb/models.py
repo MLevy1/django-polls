@@ -18,5 +18,3 @@ class Event(models.Model):
     activity = models.ForeignKey(Activity, on_delete=models.CASCADE)
     subproj = models.ForeignKey(SubProj, on_delete=models.CASCADE)
     event_time = models.DateTimeField('event time')
-    def __str__(self):
-        return self.event_time
