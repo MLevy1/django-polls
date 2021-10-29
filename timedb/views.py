@@ -8,6 +8,8 @@ from .models import Activity, SubProj, Event
 
 from django.http import HttpResponse, HttpResponseRedirect
 
+from djano.utils import timezone
+
 #main page
 def index(request):
     return HttpResponse("<h1>A New and Improved Time Database!</h1>\
@@ -66,8 +68,14 @@ def event_detail(request, event_id):
 
 #add activity
 def act_add(request):
-
-
+    try:
+        new_act = request.POST['act_inp']
+    except (KeyError, new_act.DoesNotExist):
+        return render(request, 'timedb/act_add.html')
+    else:
+        a = Activity(activity_name=new_act, pub_date=timezone.now())
+        a.save()
+        return HttpResponseRedirect(reverse('timedb/act_list.html'))        
 
 #add sub-project
 
